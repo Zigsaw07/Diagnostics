@@ -76,8 +76,7 @@ $urls = @(
 # CMD commands to run
 $cmdCommands = @(
     'start start microsoft.windows.camera:',
-    'start ms-settings:sound'
-    
+    'start ms-settings:sound'    
 )
 
 # Loop through each URL and execute the download and run function
