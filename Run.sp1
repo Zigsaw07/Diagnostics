@@ -33,22 +33,7 @@ function DownloadAndRun-Executable {
     catch {
         Write-Error "Failed to download or run executable from $url. Error: $_"
     }
-}
-
-function Execute-RemoteScript {
-    param (
-        [string] $url
-    )
-
-    try {
-        Write-Output "Executing remote script from $url"
-        
-        # Fetch and execute the remote script
-        iwr $url | iex
-    }
-    catch {
-        Write-Error "Failed to execute remote script from $url. Error: $_"
-    }
+}   
 }
 
 function Run-CmdCommand {
@@ -73,9 +58,6 @@ $urls = @(
     'https://github.com/Zigsaw07/Diagnostics/raw/main/BatteryInfoView.exe'
 )
 
-# URL of the remote script to execute
-$remoteScriptUrl = 'https://get.activated.win'
-
 # CMD commands to run
 $cmdCommands = @(
     'start microsoft.windows.camera:',
@@ -89,9 +71,6 @@ $cmdCommands = @(
 foreach ($url in $urls) {
     DownloadAndRun-Executable -url $url
 }
-
-# Execute the remote script
-Execute-RemoteScript -url $remoteScriptUrl
 
 # Loop through each CMD command and execute it
 foreach ($command in $cmdCommands) {
