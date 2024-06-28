@@ -75,7 +75,7 @@ $urls = @(
 
 # CMD commands to run
 $cmdCommands = @(
-    'start microsoft.windows.camera:',
+    'start start microsoft.windows.camera:',
     'start ms-settings:sound'
     
 )
