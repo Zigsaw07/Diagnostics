@@ -34,7 +34,6 @@ function DownloadAndRun-Executable {
         Write-Error "Failed to download or run executable from $url. Error: $_"
     }
 }   
-}
 
 function Run-CmdCommand {
     param (
